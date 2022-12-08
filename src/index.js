@@ -6,9 +6,6 @@ import reportWebVitals from './reportWebVitals';
 // Import our custom CSS
 import 'bootstrap/dist/css/bootstrap.css';
 
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
