@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { traerProductosPorId } from '../data/getData';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
+import { baseDatos } from '../data/data';
 
-const ItemDetailContainer = ({ id }) => {
-  const [producto, setProducto] = useState(null);
+const ItemDetailContainer = () => {
+  
+  const [data, setData] = useState({});
+  const {detalleId} = useParams();
 
   useEffect(() => {
-    traerProductosPorId(id, setProducto);
-  }, []);
+    const getData = new Promise(resolve => {
+        setTimeout(() => {
+            resolve(baseDatos)
+        }, 2000);
+    });
+    getData.then(res => setData(res.find(producto => producto.id === parseInt(detalleId))));
+}, [])
 
-  return (
-    <section className="item-detail-container">
-      {producto ? <ItemDetail item={producto} /> : <p>Obteniendo producto...</p>}
-    </section>
-  );
-};
+
+  return(
+    <ItemDetail data={data}/>
+  )
+}
 
 export default ItemDetailContainer;

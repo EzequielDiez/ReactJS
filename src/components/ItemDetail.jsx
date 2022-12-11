@@ -1,26 +1,26 @@
 import React from 'react';
-import ItemCount from './ItemCount';
+import ItemCount from "./ItemCount";
 
-const ItemDetail = ({ item }) => {
-  const onAdd = (cantidad) => {
-    alert(`Has agregado ${cantidad} productos`);
-  };
+const ItemDetail = ({data}) => {
+  
+    const onAdd = (cantidad) => {
+      alert(`Has agregado ${cantidad} productos`);
+    };
 
-  console.log(item);
-  return (
-    <article className="product-detail">
-      <img style={{height: 300, width: 300}} src={item.imagen} alt=""/>
-      <div className="product-detail__info">
-        <h2 className="name">{item.nombre}</h2>
-        <p className="description">{item.descripcion}</p>
-        <ul className="info-grid">
-          <li>Price:</li>
-          <li>${item.precio}</li>
+  return(
+    <article>
+      <img style={{height: 300, width: 300}} src={data.imagen} alt={data.nombre}/> 
+      <div>
+        <h2>{data.nombre}</h2>
+        <p>{data.descripcion}</p>
+        <ul>
+          <li>${data.precio}</li>
+          <li>Stock:{data.stock}</li>
+          <ItemCount stock={13} initial={1} onAdd={onAdd} />
         </ul>
-        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default ItemDetail;
+export default ItemDetail

@@ -1,5 +1,6 @@
-
+import React from 'react';
 import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -7,37 +8,37 @@ const NavBar = () => {
         <header>
             <nav className="navbar navbar-expand-lg bg-white p-4" id="navbar">
             <div className="container-fluid">
-                <a className="navbar-brand" href='/'><img src="./logo-online.png" alt="logoheader"/></a>
+                <NavLink className="navbar-brand"><img src="../logo-online.png" alt="logoheader" to="/"/></NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span> 
                 </button>
                 <div className="collapse navbar-collapse justify-content-end fs-4" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href='/'>INICIO</a>
+                    <NavLink className="nav-link active" aria-current="page" to="/">INICIO</NavLink>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href='/'>NOSOTROS</a>
+                    <NavLink className="nav-link disabled" to="/">NOSOTROS</NavLink>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href='/'>SERVICIOS</a>
+                    <NavLink className="nav-link disabled" to="/">SERVICIOS</NavLink>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href='/'>NUESTROS CLIENTES</a>
+                    <NavLink className="nav-link disabled" to="/">NUESTROS CLIENTES</NavLink>
                     </li>
                     <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <NavLink className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         TIENDA
-                    </a>
+                    </NavLink>
                     <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href='/'>Templates x9</a></li>
-                        <li><a className="dropdown-item" href='/'>Templates x12</a></li>
-                        <li><a className="dropdown-item" href='/'>Templates x15</a></li>
-                        <li><a className="dropdown-item" href='/'>Tarjeta personal digital</a></li>
+                        <li><NavLink className="dropdown-item" to="/categoria/templatex9">Templates x9</NavLink></li>
+                        <li><NavLink className="dropdown-item" to="/categoria/templatex12">Templates x12</NavLink></li>
+                        <li><NavLink className="dropdown-item" to="/categoria/templatex15">Templates x15</NavLink></li>
+                        <li><NavLink className="dropdown-item" to="/categoria/tarjetavirtual">Tarjeta personal virtual</NavLink></li>
                     </ul>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href='/'>CONTACTO</a>
+                    <NavLink className="nav-link disabled" to="/">CONTACTO</NavLink>
                     </li>
                     <CartWidget/>
                 </ul>
