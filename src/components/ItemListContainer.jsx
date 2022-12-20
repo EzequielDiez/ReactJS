@@ -22,10 +22,6 @@ const ItemListContainer = ({greeting}) => {
         getData.then(res => setData(res))
         }
     }, [categoriaId])
-
-    const onAdd = (cantidad) => {
-        alert(`Has agregado ${cantidad} productos`);
-    }
     
     return(
         <div>
