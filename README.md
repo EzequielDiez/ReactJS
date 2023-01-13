@@ -1,3 +1,33 @@
+# <h1 align="center"> Proyecto ReactJS</h1> 
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/21696457/212217725-b2dc185f-e9d8-40c5-90a8-477b97634941.png"/>
+</p>
+
+## Descripcion del proyecto
+Este proyecto fue realizado para el curso de ReactJS de CoderHouse, el mismo se realizo en base a un emprendimiento real de Marketing Digital.
+
+## ItemListContainer + Filter CategoryID
+https://user-images.githubusercontent.com/21696457/212224464-44dd18b6-89f9-404d-8b57-d10e5970fb90.mp4
+
+## ItemDetail + Cart
+https://user-images.githubusercontent.com/21696457/212224984-6c3ee52b-7687-4e3a-97dd-46e61efa15c4.mp4
+
+## Cart Checkout
+https://user-images.githubusercontent.com/21696457/212225428-fa31b8da-fc4b-4b63-b941-b466775d569c.mp4
+
+## Order in Firestore
+https://user-images.githubusercontent.com/21696457/212225911-f11db8c9-81f1-4608-a262-e74063747223.mp4
+
+### Librerias utilizadas:
+
+- Bootstrap
+- Firebase
+- React Router Dom
+- FontAwesome
+- SweetAlert
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -9,6 +39,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
