@@ -1,0 +1,22 @@
+.itemCart {
+    display: flex;
+    border-bottom: 1px solid gray;
+    max-width: auto;
+    margin-top: 2rem;
+}
+
+.itemCart p{
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.itemCart button{
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.itemCart img {
+    width: 150px;
+    height: auto;
+    margin-right: 1rem;
+}

@@ -1,0 +1,22 @@
+div h2{
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 2.5rem;
+}
+
+.carritovacio{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.botonGoShop{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.preciototal{
+    text-align: center;
+    font-size: 1.2rem;
+}

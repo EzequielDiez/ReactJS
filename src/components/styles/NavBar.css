@@ -1,0 +1,13 @@
+.navbar{
+    font-size: 1.2rem;
+}
+
+#navbarNav{
+    padding-top: 0.5rem;
+}
+
+.navbar-brand img{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    height: 45px;
+}

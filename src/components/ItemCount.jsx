@@ -23,7 +23,7 @@ const ItemCount = ({ onAdd, inicial, stock }) => {
                 <button onClick={() => addProduct(-1)}
                     //Cada vez que se presiona el "-" se reduce la cantidad en 1, si la cantidad es = al "inicial" queda deshabilitado. 
                     disabled={cantidad === inicial}> - </button>
-                <span style={{height: 100, paddingTop: 50}}>{cantidad}</span>
+                <span style={{height: 100, padding: 50}}>{cantidad}</span>
                 <button onClick={() => addProduct(+1)}
                     //Cada vez que se presiona el "+" se aumenta la cantidad en 1, si la cantidad es = al "stock" queda deshabilitado. 
                     disabled={cantidad === stock}> + </button>

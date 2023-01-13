@@ -1,0 +1,26 @@
+.col {
+    margin-top: 5rem;
+}
+
+.imgitemdetail{
+    width: 350px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.itemdetail p{
+    font-size: 20px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.listaitemdetail{
+    text-align: center;
+    list-style-type: none;
+}
+
+.listaitemdetail li{
+    font-size: 20px;
+}

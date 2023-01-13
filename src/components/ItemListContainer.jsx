@@ -1,32 +1,33 @@
 import React from "react";
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 import ItemList from "./ItemList";
 import {useState, useEffect} from "react";
-import { baseDatos  } from '../data/data.js';
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({greeting}) => {
 
     const [data, setData] = useState([])
 
     const {categoriaId} = useParams();
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve(baseDatos)
-            }, 2000);
-        });
+        const querydb = getFirestore()
+        const queryCollection = collection(querydb, 'productos')
         if (categoriaId) {
-            getData.then(res => setData(res.filter(producto => producto.categoria === categoriaId)));    
+            const queryFilter = query(queryCollection, where('categoria', '==', categoriaId))
+            getDocs(queryFilter)
+                .then(res => setData(res.docs.map(producto => ({id: producto.id, ...producto.data()})))) 
         } else {
-        getData.then(res => setData(res))
+            getDocs(queryCollection)
+                .then(res => setData(res.docs.map(producto => ({id: producto.id, ...producto.data()})))) 
         }
     }, [categoriaId])
     
     return(
-        <div>
-            <h1 style={{textAlign: 'center', marginTop: 50}}>{greeting}</h1>
-            <ItemList data={data}/> 
+        <div className="container justfy-content-center align-items-center text-center mt-5">
+            <div className="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                    <ItemList data={data}/>
+            </div> 
         </div>
     )
 }

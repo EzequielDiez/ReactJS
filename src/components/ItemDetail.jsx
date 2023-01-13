@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useCartContext } from '../context/CartContext';
 import ItemCount from "./ItemCount";
+import { Link } from 'react-router-dom';
+import './styles/ItemDetail.css'
 
 const ItemDetail = ({data}) => {
-  
+    const [goCart, setGoCart] = useState(false)
+    const {addProduct} = useCartContext()
+
     const onAdd = (cantidad) => {
-      alert(`Has agregado ${cantidad} productos`);
+      setGoCart(true)
+      addProduct(data, cantidad)
     };
 
   return(
-    <article>
-      <img style={{height: 300, width: 300}} src={data.imagen} alt={data.nombre}/> 
-      <div>
+    
+    <div className="row mt-5">
+      <div className="col-md-6">
+        <img className='imgitemdetail' src={data.imagen} alt={data.nombre}/> 
+      </div>
+
+      <div className="col-md-6 itemdetail">
         <h2>{data.nombre}</h2>
         <p>{data.descripcion}</p>
-        <ul>
-          <li>${data.precio}</li>
+        <ul className='listaitemdetail'>
+          <li className='precioitemdetail'>${data.precio}</li>
+          <li>{goCart? <Link to='/cart'>Finalizar compra</Link> : <ItemCount stock={data.stock} inicial={1} onAdd={onAdd} />}</li>
           <li>Stock:{data.stock}</li>
-          <ItemCount stock={data.stock} inicial={1} onAdd={onAdd} />
         </ul>
       </div>
-    </article>
+    </div>
+
+
+  
+
+  
   )
 }
 
 export default ItemDetail
+
